@@ -1,5 +1,4 @@
 "use server";
-
 import { db } from "@/lib/prisma";
 import { auth } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
@@ -37,7 +36,6 @@ export async function getAccountWithTransactions(accountId) {
       },
     },
   });
-
   if (!account) return null;
 
   return {
@@ -92,10 +90,8 @@ export async function bulkDeleteTransactions(transactionIds) {
         });
       }
     });
-
     revalidatePath("/dashboard");
     revalidatePath("/account/[id]");
-
     return { success: true };
   } catch (error) {
     return { success: false, error: error.message };
