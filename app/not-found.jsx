@@ -35,7 +35,6 @@ export default function NotFound() {
             </Button>
           </Link>
         </div>
-        {/* Subtle glow effect */}
         <div className="absolute inset-0 bg-blue-400/10 blur-3xl -z-20 rounded-full"></div>
       </div>
     </div>
